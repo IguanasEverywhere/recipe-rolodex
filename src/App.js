@@ -9,10 +9,12 @@ import AddRecipe from './AddRecipe';
 
 function App() {
 
+  const [recipesToDisplay, setRecipesToDisplay] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:4000/recipes')
     .then(r => r.json())
-    .then(recipeData => console.log(recipeData));
+    .then(recipeData => setRecipesToDisplay(recipeData));
   }, [])
 
 
@@ -24,7 +26,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path='/recipes'>
-          <RecipesList />
+          <RecipesList recipesToDisplay={recipesToDisplay} />
         </Route>
         <Route exact path='/recipes/:recipeId'>
           <RecipeDetail />
