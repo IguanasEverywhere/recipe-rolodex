@@ -1,0 +1,7 @@
+.navLinks {
+  text-decoration: none;
+}
+
+.navLinks.active {
+  background-color: yellow;
+}
