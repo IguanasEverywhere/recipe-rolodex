@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import Home from './Home';
@@ -8,6 +8,14 @@ import AddRecipe from './AddRecipe';
 
 
 function App() {
+
+  useEffect(() => {
+    fetch('http://localhost:4000/recipes')
+    .then(r => r.json())
+    .then(recipeData => console.log(recipeData));
+  }, [])
+
+
   return (
     <div>
       <NavBar />
