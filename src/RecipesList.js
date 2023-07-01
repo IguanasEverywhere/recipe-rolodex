@@ -1,8 +1,9 @@
 import React from 'react';
+import RecipeCard from './RecipeCard';
 
 function RecipesList({ recipesToDisplay }) {
 
-  const recipeCards = recipesToDisplay.map((recipe) => <li key={recipe.id}>{recipe.name}</li>);
+  const recipeCards = recipesToDisplay.map((recipe) => <RecipeCard key={recipe.id} recipeInfo={recipe}></RecipeCard>);
 
   return (
     <div>
