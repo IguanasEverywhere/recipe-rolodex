@@ -5,7 +5,7 @@ import './style.css';
 function NavBar() {
 
   return (
-    <div>
+    <div id='navBar'>
       <h3>
         <NavLink exact to='/' className='navLinks'>Home</NavLink>
       </h3>

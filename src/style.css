@@ -1,7 +1,31 @@
+body {
+  font-family: 'Ysabeau Office', sans-serif;
+}
+
+#navBar {
+  display: flex;
+  justify-content: space-around;
+}
+
 .navLinks {
   text-decoration: none;
 }
 
 .navLinks.active {
   background-color: yellow;
+}
+
+.recipe-card {
+  width: 500px;
+  border: 2px solid black;
+}
+
+.recipe-card-img {
+  height: 25%;
+  width: 25%;
+}
+
+.recipe-card-img > img{
+  height: 100%;
+  width: 100%;
 }
