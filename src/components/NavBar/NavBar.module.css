@@ -1,0 +1,12 @@
+.navBar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navLinks {
+  text-decoration: none;
+}
+
+.navLinks.active {
+  background-color: yellow;
+}

@@ -1,13 +1,14 @@
 import React from 'react';
+import styles from './RecipeCard.module.css';
 
 function RecipeCard({ recipeInfo }) {
 
   const { name, image, url, notes } = recipeInfo;
 
   return (
-    <div className='recipe-card'>
+    <div className={styles['recipe-card']}>
       <h3>{name}</h3>
-      <div className='recipe-card-img'>
+      <div className={styles['recipe-card-img']}>
         <img src={image} alt={name}></img>
       </div>
 
