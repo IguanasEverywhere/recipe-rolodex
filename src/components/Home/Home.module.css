@@ -1,0 +1,15 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landingImg {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+}
+
+.landingTitle {
+  font-size: 3rem;
+}
