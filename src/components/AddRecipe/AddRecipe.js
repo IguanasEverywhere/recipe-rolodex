@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AddRecipe() {
+function AddRecipe({ onNewRecipe }) {
 
   const [newRecipeFormData, setNewRecipeFormData] = useState({
     name: '',
@@ -8,8 +8,6 @@ function AddRecipe() {
     url: '',
     notes: ''
   })
-
-  console.log('FORM DATA STATE', newRecipeFormData);
 
   function handleAddFormChange(e) {
     setNewRecipeFormData({
@@ -28,8 +26,10 @@ function AddRecipe() {
       },
       body: JSON.stringify(newRecipeFormData)
     })
-    .then(r => r.json())
-    .then(addedRecipe => console.log(addedRecipe))
+      .then(r => r.json())
+      .then(addedRecipe => {
+        onNewRecipe(addedRecipe);
+      })
   }
 
   return (

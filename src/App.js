@@ -17,6 +17,11 @@ function App() {
     .then(recipeData => setRecipesToDisplay(recipeData));
   }, [])
 
+  function onNewRecipe(newRecipe) {
+    setRecipesToDisplay([...recipesToDisplay, newRecipe]);
+
+  }
+
 
   return (
     <div>
@@ -26,13 +31,13 @@ function App() {
           <Home />
         </Route>
         <Route exact path='/recipes'>
-          <RecipesList recipesToDisplay={recipesToDisplay} />
+          <RecipesList recipesToDisplay={recipesToDisplay} onNewRecipe={onNewRecipe} />
         </Route>
         <Route exact path='/recipes/:recipeId'>
           <RecipeDetail />
         </Route>
         <Route exact path='/new'>
-          <AddRecipe />
+          <AddRecipe onNewRecipe={onNewRecipe}/>
         </Route>
       </Switch>
     </div>
