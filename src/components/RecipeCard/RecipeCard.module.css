@@ -5,6 +5,7 @@
   justify-content: space-around;
   border: 2px solid black;
   cursor: pointer;
+  height: 400px;
 }
 
 .recipe-card:hover {
