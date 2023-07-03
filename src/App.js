@@ -10,19 +10,25 @@ import styles from './App.module.css'
 function App() {
 
   const [recipesToDisplay, setRecipesToDisplay] = useState([]);
+  const [searchVal, setSearchVal] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:4000/recipes')
-    .then(r => r.json())
-    .then(recipeData => setRecipesToDisplay(recipeData));
+      .then(r => r.json())
+      .then(recipeData => setRecipesToDisplay(recipeData));
   }, [])
 
   function onNewRecipe(newRecipe) {
     setRecipesToDisplay([...recipesToDisplay, newRecipe]);
+  }
 
+  function handleSearchEntry(searchBarVal) {
+    setSearchVal(searchBarVal);
   }
 
 
+
+  console.log(searchVal)
   return (
     <div>
       <NavBar />
@@ -31,13 +37,18 @@ function App() {
           <Home />
         </Route>
         <Route exact path='/recipes'>
-          <RecipesList recipesToDisplay={recipesToDisplay} onNewRecipe={onNewRecipe} />
+          <RecipesList
+            recipesToDisplay={recipesToDisplay.filter((recipe) => recipe.name.toLowerCase().includes(searchVal.toLowerCase()))}
+            onNewRecipe={onNewRecipe}
+            handleSearchEntry={handleSearchEntry}
+            searchVal={searchVal}
+          />
         </Route>
         <Route exact path='/recipes/:recipeId'>
           <RecipeDetail />
         </Route>
         <Route exact path='/new'>
-          <AddRecipe onNewRecipe={onNewRecipe}/>
+          <AddRecipe onNewRecipe={onNewRecipe} />
         </Route>
       </Switch>
     </div>
