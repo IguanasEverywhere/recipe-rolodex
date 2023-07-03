@@ -26,9 +26,6 @@ function App() {
     setSearchVal(searchBarVal);
   }
 
-
-
-  console.log(searchVal)
   return (
     <div>
       <NavBar />
@@ -44,8 +41,8 @@ function App() {
             searchVal={searchVal}
           />
         </Route>
-        <Route exact path='/recipes/:recipeId'>
-          <RecipeDetail />
+        <Route exact path={'/recipes/:recipeId'}>
+          <RecipeDetail recipesToDisplay={recipesToDisplay} />
         </Route>
         <Route exact path='/new'>
           <AddRecipe onNewRecipe={onNewRecipe} />
