@@ -1,5 +1,6 @@
 import React from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
+import styles from './RecipesList.module.css';
 
 function RecipesList({ recipesToDisplay }) {
 
@@ -7,8 +8,7 @@ function RecipesList({ recipesToDisplay }) {
 
   return (
     <div>
-      <h1>RecipesList</h1>
-      <div>{recipeCards}</div>
+      <div className={styles['recipe-cards-grid']}>{recipeCards}</div>
     </div>
   )
 }

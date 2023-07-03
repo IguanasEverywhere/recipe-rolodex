@@ -1,11 +1,19 @@
 .recipe-card {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   border: 2px solid black;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  border: 3px solid green;
 }
 
 .recipe-card-img {
-  height: 25%;
-  width: 25%;
+  width: 50%;
+  height: 50%;
 }
 
 .recipe-card-img > img{
