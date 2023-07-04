@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 
 function RecipesList({ recipesToDisplay, onNewRecipe, handleSearchEntry, searchVal }) {
 
-
+console.log('RECIPELIST MOUNTED')
 
   const recipeCards = recipesToDisplay.map((recipe) => <RecipeCard key={recipe.id} recipeInfo={recipe}></RecipeCard>);
 

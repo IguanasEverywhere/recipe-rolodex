@@ -1,0 +1,7 @@
+.recipe-detail-body {
+  border: 1px solid blue;
+}
+
+.recipe-detail-body > img {
+  height: 100px;
+}
