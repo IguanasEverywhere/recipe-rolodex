@@ -17,6 +17,12 @@ console.log('RECIPELIST MOUNTED')
       <AddRecipe onNewRecipe={onNewRecipe} />
     </div>
   )
+
+  // THIS WOULD BREAK IT SIMILARLY TO PROBLEM I HAD IN RECIPE DETAIL. CAN'T RETURN SPECIFIC ELEMENT IF EMPTY?
+
+  // return (
+  //   <div>{recipesToDisplay[0].name}</div>
+  // )
 }
 
 export default RecipesList;

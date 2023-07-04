@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function RecipeCard({ recipeInfo }) {
 
-  const { name, image, url, notes, id } = recipeInfo;
+  const { name, image, notes, id } = recipeInfo;
 
   return (
     <Link to={`/recipes/${id}`}>
@@ -13,7 +13,6 @@ function RecipeCard({ recipeInfo }) {
         <div className={styles['recipe-card-img']}>
           <img src={image} alt={name}></img>
         </div>
-        <p>Your Notes: {notes}</p>
       </div>
     </Link>
   )

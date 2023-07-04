@@ -15,7 +15,7 @@ function NavBar() {
         <NavLink exact to='/recipes' className={styles.navLinks} activeClassName={styles.active}>My Recipes</NavLink>
       </h3>
       <h3>
-        <NavLink exact to='new' className={styles.navLinks} activeClassName={styles.active}>Add New Recipe</NavLink>
+        <NavLink exact to='/new' className={styles.navLinks} activeClassName={styles.active}>Add New Recipe</NavLink>
       </h3>
     </div>
   )
