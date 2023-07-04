@@ -12,6 +12,7 @@ function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState([]);
   const [searchVal, setSearchVal] = useState('');
 
+
   useEffect(() => {
     fetch('http://localhost:4000/recipes')
       .then(r => r.json())
@@ -20,6 +21,7 @@ function App() {
 
   function onNewRecipe(newRecipe) {
     setRecipesToDisplay([...recipesToDisplay, newRecipe]);
+
   }
 
   function handleSearchEntry(searchBarVal) {

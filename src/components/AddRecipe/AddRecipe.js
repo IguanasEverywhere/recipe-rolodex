@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
 function AddRecipe({ onNewRecipe }) {
+
+  const history = useHistory();
 
   const [newRecipeFormData, setNewRecipeFormData] = useState({
     name: '',
@@ -29,6 +32,7 @@ function AddRecipe({ onNewRecipe }) {
       .then(r => r.json())
       .then(addedRecipe => {
         onNewRecipe(addedRecipe);
+        history.push('/recipes');
       })
   }
 
