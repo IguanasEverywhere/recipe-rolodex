@@ -7,8 +7,8 @@ function RecipeCard({ recipeInfo }) {
   const { name, image, notes, id } = recipeInfo;
 
   return (
-    <Link to={`/recipes/${id}`}>
-      <div className={styles['recipe-card']}>
+    <Link to={`/recipes/${id}`} className={styles['recipe-card']}>
+      <div>
         <h3>{name}</h3>
         <div className={styles['recipe-card-img']}>
           <img src={image} alt={name}></img>
