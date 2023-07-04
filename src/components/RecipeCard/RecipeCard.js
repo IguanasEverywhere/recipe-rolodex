@@ -4,18 +4,17 @@ import { Link } from 'react-router-dom';
 
 function RecipeCard({ recipeInfo }) {
 
-  const { name, image, notes, id } = recipeInfo;
+  const { name, image, id } = recipeInfo;
 
   return (
-    <Link to={`/recipes/${id}`} className={styles['recipe-card']}>
+    <Link to={`/recipes/${id}`} className={styles['recipe-card']} style={{backgroundImage: `url(${image})`, backgroundSize: 'cover'}}>
       <div>
         <h3>{name}</h3>
-        <div className={styles['recipe-card-img']}>
-          <img src={image} alt={name}></img>
-        </div>
       </div>
     </Link>
   )
 }
 
 export default RecipeCard;
+
+// style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
