@@ -33,6 +33,7 @@ function AddRecipe({ onNewRecipe }) {
       .then(addedRecipe => {
         onNewRecipe(addedRecipe);
         history.push('/recipes');
+        // update this with modal
       })
   }
 
