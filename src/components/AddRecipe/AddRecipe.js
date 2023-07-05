@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import styles from './AddRecipe.module.css'
 
 function AddRecipe({ onNewRecipe }) {
 
@@ -38,14 +39,34 @@ function AddRecipe({ onNewRecipe }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleAddFormSubmit}>
-        <input name="name" placeholder="Recipe Name" value={newRecipeFormData.name} onChange={handleAddFormChange}></input>
-        <input name="image" placeholder="Recipe Image URL" value={newRecipeFormData.image} onChange={handleAddFormChange}></input>
-        <input name="url" placeholder="Recipe Link URL" value={newRecipeFormData.url} onChange={handleAddFormChange}></input>
-        <input name="notes" placeholder="Notes" value={newRecipeFormData.notes} onChange={handleAddFormChange}></input>
-        <input type="submit"></input>
-      </form>
+    <div className={styles['form-container']}>
+      <h2>Enter Recipe Info:</h2>
+      <br></br>
+      <div className={styles['form-area']}>
+        <form onSubmit={handleAddFormSubmit}>
+          <label htmlFor="name">Name of Recipe</label>
+          <br></br>
+          <input name="name" value={newRecipeFormData.name} onChange={handleAddFormChange} id="name"></input>
+          <br></br>
+
+          <label htmlFor="image">URL of Recipe Image</label>
+          <br></br>
+          <input name="image" value={newRecipeFormData.image} onChange={handleAddFormChange} id="image"></input>
+          <br></br>
+
+          <label htmlFor="url">Recipe Link</label>
+          <br></br>
+          <input name="url" value={newRecipeFormData.url} onChange={handleAddFormChange} id="url"></input>
+          <br></br>
+
+          <label htmlFor="notes">Notes About Recipe</label>
+          <br></br>
+          <input name="notes" value={newRecipeFormData.notes} onChange={handleAddFormChange} id="notes"></input>
+          <br></br>
+
+          <input className={styles['submit-btn']}type="submit"></input>
+        </form>
+      </div>
     </div>
   )
 }
