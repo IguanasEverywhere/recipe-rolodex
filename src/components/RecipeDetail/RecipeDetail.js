@@ -18,7 +18,7 @@ function RecipeDetail({ recipesToDisplay }) {
         <h1>{currentRecipe.name}</h1>
         <img src={currentRecipe.image} alt={currentRecipe.name}></img>
         <a href={currentRecipe.url}>{currentRecipe.url}</a>
-        <p>{currentRecipe.notes}</p>
+        <h3>NOTES: {currentRecipe.notes}</h3>
 
       </div>
     )
