@@ -16,5 +16,3 @@ function RecipeCard({ recipeInfo }) {
 }
 
 export default RecipeCard;
-
-// style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
