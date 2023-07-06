@@ -4,7 +4,7 @@ import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import Backdrop from '../Backdrop/Backdrop';
 import styles from './RecipeDetail.module.css';
 
-function RecipeDetail({ recipesToDisplay, changeModalVisibility, modalVisible }) {
+function RecipeDetail({ recipesToDisplay, changeModalVisibility, modalVisible, onDeleteRecipe }) {
 
 
   console.log('RecipeDetail mounted')
@@ -28,7 +28,7 @@ function RecipeDetail({ recipesToDisplay, changeModalVisibility, modalVisible })
         <h3>NOTES: {currentRecipe.notes}</h3>
         <button onClick={handleDeleteClick}>Delete This Recipe</button>
         {modalVisible ? <Backdrop /> : null}
-        {modalVisible ? <ConfirmModal confirmAction='deleteConfirm' changeModalVisibility={changeModalVisibility}/> : null}
+        {modalVisible ? <ConfirmModal confirmAction='deleteConfirm' changeModalVisibility={changeModalVisibility} onDeleteRecipe={onDeleteRecipe}/> : null}
       </div>
     )
   }

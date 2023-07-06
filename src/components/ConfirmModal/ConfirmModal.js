@@ -1,10 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import styles from './ConfirmModal.module.css';
 
-function ConfirmModal({ confirmAction, changeModalVisibility }) {
+function ConfirmModal({ confirmAction, changeModalVisibility, onDeleteRecipe }) {
 
   const params = useParams();
+  const history = useHistory();
 
   const confirmMessage = confirmAction === 'deleteConfirm' ?
     'Are you sure you want to delete this recipe?' :
@@ -15,11 +16,15 @@ function ConfirmModal({ confirmAction, changeModalVisibility }) {
   }
 
   function handleConfirmDeleteClick() {
+    changeModalVisibility();
     fetch(`http://localhost:4000/recipes/${params.recipeId}`, {
       method: 'DELETE'
     })
-    .then(r => r.json())
-    .then(confirmedDelete => console.log('deleted!'))
+      .then(r => r.json())
+      .then(confirmedDelete => {
+        onDeleteRecipe(parseInt(params.recipeId))
+        history.push('/recipes')
+      })
   }
 
   return (

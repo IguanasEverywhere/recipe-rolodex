@@ -23,6 +23,11 @@ function App() {
     setRecipesToDisplay([...recipesToDisplay, newRecipe]);
   }
 
+  function onDeleteRecipe(deletedRecipeId) {
+    const updatedRecipes = recipesToDisplay.filter((recipe) => recipe.id !== deletedRecipeId)
+    setRecipesToDisplay(updatedRecipes)
+  }
+
   function handleSearchEntry(searchBarVal) {
     setSearchVal(searchBarVal);
   }
@@ -51,6 +56,7 @@ function App() {
             recipesToDisplay={recipesToDisplay}
             changeModalVisibility={changeModalVisibility}
             modalVisible={modalVisible}
+            onDeleteRecipe={onDeleteRecipe}
           />
         </Route>
         <Route exact path='/new'>
