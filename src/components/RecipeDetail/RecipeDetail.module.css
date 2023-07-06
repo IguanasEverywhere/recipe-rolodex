@@ -8,3 +8,20 @@
   height: 300px;
   border-radius: 5%;
 }
+
+.delete-btn {
+
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f28500;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.delete-btn:hover {
+  background-color: white;
+  border: 1px solid #f28500;
+  color: #f28500;
+}

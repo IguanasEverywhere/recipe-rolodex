@@ -26,7 +26,7 @@ function RecipeDetail({ recipesToDisplay, changeModalVisibility, modalVisible, o
         <img src={currentRecipe.image} alt={currentRecipe.name}></img>
         <a href={currentRecipe.url}>{currentRecipe.url}</a>
         <h3>NOTES: {currentRecipe.notes}</h3>
-        <button onClick={handleDeleteClick}>Delete This Recipe</button>
+        <button className={styles['delete-btn']} onClick={handleDeleteClick}>Delete This Recipe</button>
         {modalVisible ? <Backdrop /> : null}
         {modalVisible ? <ConfirmModal confirmAction='deleteConfirm' changeModalVisibility={changeModalVisibility} onDeleteRecipe={onDeleteRecipe}/> : null}
       </div>
