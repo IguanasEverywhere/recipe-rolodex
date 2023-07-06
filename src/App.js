@@ -60,7 +60,7 @@ function App() {
           />
         </Route>
         <Route exact path='/new'>
-          <AddRecipe onNewRecipe={onNewRecipe} />
+          <AddRecipe onNewRecipe={onNewRecipe} modalVisible={modalVisible} changeModalVisibility={changeModalVisibility} />
         </Route>
       </Switch>
     </div>

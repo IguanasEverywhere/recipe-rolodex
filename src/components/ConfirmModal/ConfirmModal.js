@@ -7,9 +7,10 @@ function ConfirmModal({ confirmAction, changeModalVisibility, onDeleteRecipe }) 
   const params = useParams();
   const history = useHistory();
 
+
   const confirmMessage = confirmAction === 'deleteConfirm' ?
     'Are you sure you want to delete this recipe?' :
-    'Some other message?';
+    'Recipe Added!';
 
   function handleCancelClick() {
     changeModalVisibility();
@@ -27,6 +28,10 @@ function ConfirmModal({ confirmAction, changeModalVisibility, onDeleteRecipe }) 
       })
   }
 
+  function handleOKClick() {
+    history.push('/recipes');
+  }
+
   return (
     <div className={styles['confirm-modal']}>
       <h3>{confirmMessage}</h3>
@@ -38,7 +43,7 @@ function ConfirmModal({ confirmAction, changeModalVisibility, onDeleteRecipe }) 
             <button className={styles['modal-btn']} onClick={handleCancelClick}>Cancel</button>
           </div> :
           <div>
-            <button>OK</button>
+            <button onClick={handleOKClick}>OK</button>
           </div>
       }
     </div>

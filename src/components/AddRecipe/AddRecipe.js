@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Backdrop from '../Backdrop/Backdrop';
+import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import styles from './AddRecipe.module.css'
 
-function AddRecipe({ onNewRecipe }) {
+function AddRecipe({ onNewRecipe, modalVisible, changeModalVisibility }) {
 
   const history = useHistory();
 
@@ -21,7 +23,9 @@ function AddRecipe({ onNewRecipe }) {
   }
 
   function handleAddFormSubmit(e) {
+    changeModalVisibility();
     e.preventDefault();
+
     fetch('http://localhost:4000/recipes', {
       method: 'POST',
       headers: {
@@ -33,8 +37,6 @@ function AddRecipe({ onNewRecipe }) {
       .then(r => r.json())
       .then(addedRecipe => {
         onNewRecipe(addedRecipe);
-        history.push('/recipes');
-        // update this with modal
       })
   }
 
@@ -64,9 +66,11 @@ function AddRecipe({ onNewRecipe }) {
           <input name="notes" value={newRecipeFormData.notes} onChange={handleAddFormChange} id="notes"></input>
           <br></br>
 
-          <input className={styles['submit-btn']}type="submit"></input>
+          <input className={styles['submit-btn']} type="submit"></input>
         </form>
       </div>
+      {modalVisible ? <Backdrop /> : null}
+      {modalVisible ? <ConfirmModal confirmAction='addConfirm' changeModalVisibility={changeModalVisibility} /> : null}
     </div>
   )
 }
