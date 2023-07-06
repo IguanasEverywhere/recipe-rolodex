@@ -1,0 +1,7 @@
+.confirm-modal {
+  background-color: orange;
+  position: absolute;
+  height: 60%;
+  width: 60%;
+  z-index: 10;
+}

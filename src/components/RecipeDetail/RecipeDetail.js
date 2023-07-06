@@ -27,7 +27,7 @@ function RecipeDetail({ recipesToDisplay }) {
         <a href={currentRecipe.url}>{currentRecipe.url}</a>
         <h3>NOTES: {currentRecipe.notes}</h3>
         <button onClick={handleDeleteClick}>Delete This Recipe</button>
-        {modalVisible ? <ConfirmModal /> : null}
+        {modalVisible ? <ConfirmModal confirmAction='deleteConfirm' /> : null}
       </div>
     )
   }
