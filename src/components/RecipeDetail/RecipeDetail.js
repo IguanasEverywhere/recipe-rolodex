@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
+import Backdrop from '../Backdrop/Backdrop';
 import styles from './RecipeDetail.module.css';
 
 function RecipeDetail({ recipesToDisplay, onDeleteClick, modalVisible }) {
@@ -26,6 +27,7 @@ function RecipeDetail({ recipesToDisplay, onDeleteClick, modalVisible }) {
         <a href={currentRecipe.url}>{currentRecipe.url}</a>
         <h3>NOTES: {currentRecipe.notes}</h3>
         <button onClick={handleDeleteClick}>Delete This Recipe</button>
+        {modalVisible ? <Backdrop /> : null}
         {modalVisible ? <ConfirmModal confirmAction='deleteConfirm' /> : null}
       </div>
     )
