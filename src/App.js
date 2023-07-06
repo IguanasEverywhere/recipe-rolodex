@@ -28,7 +28,7 @@ function App() {
     setSearchVal(searchBarVal);
   }
 
-  function onDeleteClick() {
+  function changeModalVisibility() {
     setModalVisible((prevVisibility => !prevVisibility));
   }
 
@@ -48,7 +48,7 @@ function App() {
           />
         </Route>
         <Route exact path={'/recipes/:recipeId'}>
-          <RecipeDetail recipesToDisplay={recipesToDisplay} onDeleteClick={onDeleteClick} modalVisible={modalVisible} />
+          <RecipeDetail recipesToDisplay={recipesToDisplay} changeModalVisibility={changeModalVisibility} modalVisible={modalVisible} />
         </Route>
         <Route exact path='/new'>
           <AddRecipe onNewRecipe={onNewRecipe} />

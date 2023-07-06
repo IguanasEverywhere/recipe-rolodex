@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './ConfirmModal.module.css';
 
-function ConfirmModal({ confirmAction }) {
+function ConfirmModal({ confirmAction, changeModalVisibility }) {
 
   const confirmMessage = confirmAction === 'deleteConfirm' ?
     'Are you sure you want to delete this recipe?' :
     'Some other message?';
+
+function handleCancelClick() {
+  changeModalVisibility();
+}
 
   return (
     <div className={styles['confirm-modal']}>
@@ -15,7 +19,7 @@ function ConfirmModal({ confirmAction }) {
         confirmAction === 'deleteConfirm' ?
           <div>
             <button>Confirm</button>
-            <button>Cancel</button>
+            <button onClick={handleCancelClick}>Cancel</button>
           </div> :
           <div>
             <button>OK</button>
