@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import styles from './RecipeDetail.module.css';
 
-function RecipeDetail({ recipesToDisplay }) {
+function RecipeDetail({ recipesToDisplay, onDeleteClick, modalVisible }) {
 
-  const [modalVisible, setModalVisible] = useState(false);
 
   console.log('RecipeDetail mounted')
   const params = parseInt(useParams().recipeId);
 
   function handleDeleteClick() {
-    setModalVisible((prevVisibility => !prevVisibility));
+    onDeleteClick();
   }
 
   if (recipesToDisplay.length === 0) {

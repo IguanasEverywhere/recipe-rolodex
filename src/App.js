@@ -11,7 +11,7 @@ function App() {
 
   const [recipesToDisplay, setRecipesToDisplay] = useState([]);
   const [searchVal, setSearchVal] = useState('');
-
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:4000/recipes')
@@ -26,6 +26,10 @@ function App() {
 
   function handleSearchEntry(searchBarVal) {
     setSearchVal(searchBarVal);
+  }
+
+  function onDeleteClick() {
+    setModalVisible((prevVisibility => !prevVisibility));
   }
 
   return (
@@ -44,7 +48,7 @@ function App() {
           />
         </Route>
         <Route exact path={'/recipes/:recipeId'}>
-          <RecipeDetail recipesToDisplay={recipesToDisplay} />
+          <RecipeDetail recipesToDisplay={recipesToDisplay} onDeleteClick={onDeleteClick} modalVisible={modalVisible} />
         </Route>
         <Route exact path='/new'>
           <AddRecipe onNewRecipe={onNewRecipe} />
