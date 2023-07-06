@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import styles from './RecipeDetail.module.css';
 
 function RecipeDetail({ recipesToDisplay }) {
 
+  const [modalVisible, setModalVisible] = useState(false);
+
   console.log('RecipeDetail mounted')
   const params = parseInt(useParams().recipeId);
+
+  function handleDeleteClick() {
+    setModalVisible((prevVisibility => !prevVisibility));
+  }
 
   if (recipesToDisplay.length === 0) {
     return <h1>Loading...</h1>
@@ -19,7 +26,8 @@ function RecipeDetail({ recipesToDisplay }) {
         <img src={currentRecipe.image} alt={currentRecipe.name}></img>
         <a href={currentRecipe.url}>{currentRecipe.url}</a>
         <h3>NOTES: {currentRecipe.notes}</h3>
-
+        <button onClick={handleDeleteClick}>Delete This Recipe</button>
+        {modalVisible ? <ConfirmModal /> : null}
       </div>
     )
   }
