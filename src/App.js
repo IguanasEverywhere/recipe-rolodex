@@ -21,7 +21,6 @@ function App() {
 
   function onNewRecipe(newRecipe) {
     setRecipesToDisplay([...recipesToDisplay, newRecipe]);
-
   }
 
   function handleSearchEntry(searchBarVal) {
@@ -48,7 +47,11 @@ function App() {
           />
         </Route>
         <Route exact path={'/recipes/:recipeId'}>
-          <RecipeDetail recipesToDisplay={recipesToDisplay} changeModalVisibility={changeModalVisibility} modalVisible={modalVisible} />
+          <RecipeDetail
+            recipesToDisplay={recipesToDisplay}
+            changeModalVisibility={changeModalVisibility}
+            modalVisible={modalVisible}
+          />
         </Route>
         <Route exact path='/new'>
           <AddRecipe onNewRecipe={onNewRecipe} />
