@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Recipe Rolodex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Recipe Rolodex allows users to collect and manage their favorite recipes from around the web into a single, searchable collection via a user-friendly interface.
 
-## Available Scripts
+## Technologies Utilized
 
-In the project directory, you can run:
+* React
+* React-Router
+* CSS Modules
+* JSON Server
+* Google Fonts
 
-### `npm start`
+## Installation Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Repcipe Rolodex is not currently live on the web, and the "server" is run via json-server and a local file called db.json . Recommended 'installation' instructions are:
+* Fork and Clone this Repo
+* Within the home directory of the project and with Node.js installed, run:
+  - "npm install"
+  - "npm run server"
+  - "npm start"
+* View the program in a browser at http://localhost:3000 . If you wish to view the server data, visit http://localhost:4000/recipes with the server running.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+The Navigation Bar at the top of the application provides routes to Home, My Recipes, and Add New Recipe. Clicking on these links will direct the user to an appropriate route, where the actions they can take are as follows:
+* Home
+  - View the Home page, with the Recipe Rolodex title and logo
+* My Recipes
+  - View all Recipes in the Rolodex as Cards
+  - Use the Search Bar: Recipe Cards displayed will be filtered to include only recipes whose names partially match the search query
+  - Click on a specific Recipe Card, which will route the user to a specific Recipe Details page
+* Recipe Details (arrived at by clicking a card)
+  - View more detailed information on the recipe including the recipe's name, image, URL of where the recipe lives on the web, and user notes
+  - Delete the recipe from the Rolodex
+* Add New Recipe
+  - Add a new recipe to the Rolodex by completing a form. The form has basic validation to ensure a submit button only appears when all input fields are not empty.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(Demonstration Gif here)
 
-### `npm run build`
+## Roadmap for Future Plans
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ideas for future development for Recipe Rolodex include:
+* Deploying the front end to a host to make the project "live"
+* Replacing json-server with a true back end, so that data can persist in a way that is accessible from any eligible client
+* Add ability to edit recipe details
+* Add an "ingredients" array to recipe details
+* Add more detailed form validation for Add New Recipe (i.e. require URLs to be valid syntax)
+* Incorporate "fallback" placeholder images in case a recipe's image fails to load
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Author
+Scott Schwab, 2023
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+* Home Page Logo image by "Cooker King" via Unsplash, https://unsplash.com/photos/AOVtEuU9UGc
+* Recipe images are all provided by their respective websites, as listed in each recipe's Details page
+* "Ysabeau Office" font provided from Google Fonts, https://fonts.google.com
+* README template ideas utilized from http://makeareadme.com and http://markdownlivepreview.com
+* Demonstration GIF captured with GIPHY CAPTURE, https://giphy.com/apps/giphycapture
