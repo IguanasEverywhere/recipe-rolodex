@@ -42,8 +42,8 @@ function ConfirmModal({ confirmAction, changeModalVisibility, onDeleteRecipe }) 
             <button className={styles['modal-btn']} onClick={handleConfirmDeleteClick}>Confirm</button>
             <button className={styles['modal-btn']} onClick={handleCancelClick}>Cancel</button>
           </div> :
-          <div>
-            <button onClick={handleOKClick}>OK</button>
+          <div className={styles['button-area']}>
+            <button className={styles['modal-btn']} onClick={handleOKClick}>OK</button>
           </div>
       }
     </div>
