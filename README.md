@@ -33,12 +33,12 @@ The Navigation Bar at the top of the application provides routes to Home, My Rec
   - View more detailed information on the recipe including the recipe's name, image, URL of where the recipe lives on the web, and user notes
   - Delete the recipe from the Rolodex
 
-<img src="https://github.com/IguanasEverywhere/recipe-rolodex/blob/main/gifs/demo1.gif" width="200" height="200" />
+<img src="https://github.com/IguanasEverywhere/recipe-rolodex/blob/main/gifs/demo1.gif" width="400" height="300" />
 
 * Add New Recipe
   - Add a new recipe to the Rolodex by completing a form. The form has basic validation to ensure a submit button only appears when all input fields are not empty.
 
-![](https://github.com/IguanasEverywhere/recipe-rolodex/blob/main/gifs/demo2.gif =250x)
+<img src="https://github.com/IguanasEverywhere/recipe-rolodex/blob/main/gifs/demo2.gif" width="400" height="300" />
 
 ## Roadmap for Future Plans
 
