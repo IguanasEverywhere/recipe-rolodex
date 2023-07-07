@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Backdrop from '../Backdrop/Backdrop';
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import styles from './AddRecipe.module.css'
 
 function AddRecipe({ onNewRecipe, modalVisible, changeModalVisibility }) {
-
-  const history = useHistory();
 
   const [newRecipeFormData, setNewRecipeFormData] = useState({
     name: '',
@@ -14,6 +11,19 @@ function AddRecipe({ onNewRecipe, modalVisible, changeModalVisibility }) {
     url: '',
     notes: ''
   })
+
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  useEffect(() => {
+    if (newRecipeFormData.name.length > 0 &&
+      newRecipeFormData.image.length > 0 &&
+      newRecipeFormData.url.length > 0 &&
+      newRecipeFormData.notes.length > 0) {
+        setFormIsValid(true)
+      } else {
+        setFormIsValid(false)
+      }
+  }, [newRecipeFormData])
 
   function handleAddFormChange(e) {
     setNewRecipeFormData({
@@ -66,7 +76,7 @@ function AddRecipe({ onNewRecipe, modalVisible, changeModalVisibility }) {
           <input name="notes" value={newRecipeFormData.notes} onChange={handleAddFormChange} id="notes"></input>
           <br></br>
 
-          <input className={styles['submit-btn']} type="submit"></input>
+          {formIsValid ? <input className={styles['submit-btn']} type="submit"></input> : <p className={styles['invalid-form-msg']}>Please enter values for every field</p>}
         </form>
       </div>
       {modalVisible ? <Backdrop /> : null}
