@@ -43,18 +43,18 @@
       "id": 8
     },
     {
-      "name": "Spicy Vegan Potato Curry",
-      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9272101.jpg&q=60&c=sc&orient=true&poi=auto&h=512",
-      "url": "allrecipes.com/recipe/165190/spicy-vegan-potato-curry/",
-      "notes": "Haven't tried it yet!",
-      "id": 10
-    },
-    {
       "name": "Instant Pot Buffalo Chicken Pasta",
       "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8986437.jpg&q=60&c=sc&orient=true&poi=auto&h=512",
       "url": "https://www.allrecipes.com/recipe/283199/instant-pot-buffalo-chicken-pasta",
       "notes": "Consider halving the recipe, it makes a lot!",
       "id": 11
+    },
+    {
+      "name": "Spicy Potato Vegan Curry",
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9272101.jpg&q=60&c=sc&orient=true&poi=auto&h=512",
+      "url": "allrecipes.com/recipe/165190/spicy-vegan-potato-curry/",
+      "notes": "Use milder spices next time!",
+      "id": 12
     }
   ]
 }
